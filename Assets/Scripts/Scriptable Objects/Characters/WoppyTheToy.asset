@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720bc4a8e17ac3f4da5fc2cb8ad30317, type: 3}
+  m_Name: WoppyTheToy
+  m_EditorClassIdentifier: 
+  characterName: Woopy
+  characterModel: {fileID: 5030645071561653432, guid: 379cfb6848589a948b84691a4df3bed9,
+    type: 3}
+  characterSprite: {fileID: 21300000, guid: 8312950f7197afc449ba18b85eb790e8, type: 3}
+  characterPoints: 150
+  characterDesc: The Toy
