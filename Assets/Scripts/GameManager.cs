@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Reference the character list
     public CharacterListSO characters;
+    //Reference the grid layout
     public GameObject multi;
+    //Reference the single layout
     public GameObject single;
+    //refernce the new Char menu
     public GameObject newCharMenu;
-    public bool firstTime;
 
     void Start()
     {
+        //Fill the list from the array
         ClearNCreateCharList();
         multi.SetActive(false);
         single.SetActive(true);
-        FirstTime();
     }
 
     void Update()
     {
     }
 
+    //Since SO are affected outside of runtime
+    //refill the list the game runs for the first time
     void ClearNCreateCharList()
     {
         characters.charList.Clear();
@@ -31,41 +36,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Set the grid layout to show itself and have the single layout as off
     public void SwapToMulti()
     {
         multi.SetActive(true);
         single.SetActive(false);
     }
 
+    //vise versa /\
     public void SwapToSingle()
     {
         multi.SetActive(false);
         single.SetActive(true);
     }
 
+    //Sets up the character menu
     public void NewCharacterMenu()
     {
         newCharMenu.SetActive(true);
     }
 
+    //Turns off the character menu
     public void CloseCharacterMenu()
     {
         newCharMenu.SetActive(false);
-    }
-
-    void FirstTime()
-    {
-        if (PlayerPrefs.GetInt("FIRSTTIMEOPENING", 1) == 1)
-        {
-            //Set first time opening to false
-            PlayerPrefs.SetInt("FIRSTTIMEOPENING", 0);
-            firstTime = true;
-            Debug.Log("First Time");
-        }
-        else
-        {
-            firstTime = false;
-            Debug.Log("NOT First Time Opening");
-        }
     }
 }

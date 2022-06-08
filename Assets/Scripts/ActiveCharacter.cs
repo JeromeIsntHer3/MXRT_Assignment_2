@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class ActiveCharacter : MonoBehaviour
 {
+    //Hold The Curr Model in the scene
     public GameObject currModel;
+    //Hold the animator of model in the scsne
     public Animator currAnim;
+    //check if the player model is in the dead state animation
     private bool isDead;
 
     void Update()
     {
+        //If there is a child of this? object, set the gameobject and find it's animator
         if(transform.childCount > 0)
         {
             currModel = transform.GetChild(0).gameObject;
@@ -19,6 +23,8 @@ public class ActiveCharacter : MonoBehaviour
             currAnim = GetComponentInChildren<Animator>();
         }
 #if UNITY_ANDROID
+        //check what raycast catches at which part of the objects of which have their own
+        //colliders and their own seperate tags
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
