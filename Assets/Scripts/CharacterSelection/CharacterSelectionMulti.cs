@@ -131,6 +131,7 @@ public class CharacterSelectionMulti : MonoBehaviour
         {
             GameObject model = Instantiate(_currSelectedCharacter.characterModel, characterSpot.position, Quaternion.identity);
             model.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            model.transform.localRotation = characterSpot.localRotation;
             model.transform.SetParent(characterSpot);
         }
     }
